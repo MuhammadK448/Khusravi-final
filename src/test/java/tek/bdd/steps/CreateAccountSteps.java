@@ -52,10 +52,9 @@ public class CreateAccountSteps extends SeleniumUtility {
 
     @Then("Verify error message {string} is displayed")
     public void verify_error_message_is_displayed(String expectedMessage) throws InterruptedException {
-        //String errorTxt = getElementText(CreateAccountPage.ERROR_MESSAGE);
-        String errorTxt = getDriver().findElement(By.xpath("(//div[@data-status='error'])[1]")).getText();
+        String errorTxt = getElementText(CreateAccountPage.ERROR_MESSAGE);
         Thread.sleep(1000);
-        String actualErrorMessage = errorTxt.split("\n")[1]; //Account with email khusravi_987@email.com is exist
+        String actualErrorMessage = errorTxt.split("\n")[1];
         Assert.assertEquals("Error Message should match expected", expectedMessage, actualErrorMessage);
     }
 

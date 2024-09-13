@@ -24,8 +24,6 @@ Feature: Create new Account
     When User clicks on 'Create Account' button
     Then Validate email is matching 'random email'
 
-
-
   @Scenario3
   Scenario: Create account with existing email address and validate error message as expected
     When User enters '9rnlxkd4jn@hotmail.com' value on 'Email Address' field
@@ -75,5 +73,3 @@ Feature: Create new Account
     Then Verify 'Primary Account Portal' page is displayed
     When User clicks on profile icon
     Then Verify 'Muhammad Khusravi' is displayed
-
-
