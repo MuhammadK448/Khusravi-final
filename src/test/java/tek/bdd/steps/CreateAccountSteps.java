@@ -53,7 +53,7 @@ public class CreateAccountSteps extends SeleniumUtility {
     @Then("Verify error message {string} is displayed")
     public void verify_error_message_is_displayed(String expectedMessage) throws InterruptedException {
         String errorTxt = getElementText(CreateAccountPage.ERROR_MESSAGE);
-        Thread.sleep(1000);
+        //Thread.sleep(1000);
         String actualErrorMessage = errorTxt.split("\n")[1];
         Assert.assertEquals("Error Message should match expected", expectedMessage, actualErrorMessage);
     }
