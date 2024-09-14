@@ -8,7 +8,6 @@ import tek.bdd.utilities.SeleniumUtility;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.List;
 
 public class PlansSteps extends SeleniumUtility {
@@ -21,20 +20,19 @@ public class PlansSteps extends SeleniumUtility {
 
     @Then("Verify Create Date is todays date")
     public void verifyCreateDateIsTodaysDate() {
+        String expectedCreateDate = LocalDate.now().format(DateTimeFormatter.ofPattern("MMMM d, yyyy"));
         List<WebElement> actualCreatedDates = getElementsList(PlansPage.CREATED_DATE);
         for (WebElement eachRow : actualCreatedDates){
-            Assert.assertEquals("Created date should be today's date",
-                    LocalDate.now().format(DateTimeFormatter.ofPattern("MMMM d, yyyy")), eachRow.getText());
+            Assert.assertEquals("Actual and expected dates should match for each row",expectedCreateDate, eachRow.getText());
         }
     }
 
     @Then("Verify Expiry Date is the next day")
     public void verifyExpiryDateIsTheNextDay() {
-        String expectedDate = LocalDate.now().plusDays(1).format(DateTimeFormatter.ofPattern("MMMM d, yyyy"));
+        String expectedExpDate = LocalDate.now().plusDays(1).format(DateTimeFormatter.ofPattern("MMMM d, yyyy"));
         List<WebElement> actualExpiryDates = getElementsList(PlansPage.EXPIRY_DATE);
         for(WebElement expiryDate : actualExpiryDates){
-            String temp = expiryDate.getText();
-           Assert.assertEquals("Actual and expected dates should match for each row",expectedDate, expiryDate.getText());
+           Assert.assertEquals("Actual and expected dates should match for each row",expectedExpDate, expiryDate.getText());
         }
     }
 }

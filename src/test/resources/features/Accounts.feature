@@ -1,3 +1,4 @@
+@Accounts
 Feature: Accounts Feature
 
   Background: Plan data table info validation
@@ -10,9 +11,14 @@ Feature: Accounts Feature
     When User clicks on 'Accounts' link
     Then Verify "Primary Accounts" page is displayed
 
-    Scenario: Verify 5 rows per page is the default
-      #Then Validate 5 row per page is the default
-      Then Validate 5 row of data is present
+  Scenario: Verify 5 rows per page is the default
+    Then Validate 5 row of data is present
 
-      Scenario: Verify number of rows per page is based on selected show per page dropdown
-        When User selects <rowCount> from <showPerPage> dropdown
+  Scenario Outline:
+    When User selects <recordsToDisplay> from show records per page dropdown
+    Then Validate <selected> number of records displayed
+    Examples:
+      | recordsToDisplay | selected |
+      | '10'             | 10     |
+      | '25'             | 25     |
+      | '50'             | 50     |

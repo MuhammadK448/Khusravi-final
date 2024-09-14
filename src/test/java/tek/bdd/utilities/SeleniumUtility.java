@@ -1,7 +1,5 @@
 package tek.bdd.utilities;
 
-import io.cucumber.java.ca.Cal;
-import io.cucumber.java.sl.In;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
@@ -10,13 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import tek.bdd.base.BaseSetup;
 
-import javax.swing.text.DateFormatter;
 import java.time.Duration;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -78,6 +70,11 @@ public class SeleniumUtility extends BaseSetup {
     public void SelectByText(WebElement element, String text){
         Select select = new Select(element);
         select.selectByVisibleText(text);
+    }
+
+    public void SelectByValue(WebElement element, String text){
+        Select select = new Select(element);
+        select.selectByValue(text);
     }
 
     public String randomDataOfBirth(int yearStart, int yearEnd)
