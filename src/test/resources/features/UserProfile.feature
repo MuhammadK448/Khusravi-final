@@ -1,4 +1,4 @@
-@UserProfile
+@UserProfile @Regression
 Feature: User Profile Validation
 
   Background: User profile page validation

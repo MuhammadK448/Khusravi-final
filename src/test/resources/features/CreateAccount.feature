@@ -1,4 +1,4 @@
-@CreateAccount
+@CreateAccount @Regression
 Feature: Create new Account
 
   # Steps that are common between scenarios of specific feature

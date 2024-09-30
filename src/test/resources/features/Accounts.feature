@@ -1,4 +1,4 @@
-@Accounts
+@Accounts @Regression
 Feature: Accounts Feature
 
   Background: Plan data table info validation

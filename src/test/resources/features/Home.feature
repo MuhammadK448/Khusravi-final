@@ -1,3 +1,4 @@
+@Regression
 Feature: Home page validation
 
   @Scenario1

@@ -1,4 +1,4 @@
-@Login
+@Login @Regression
 Feature: Navigate to Login page
 
   Background: Login with valid and invalid credentials

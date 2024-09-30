@@ -1,4 +1,4 @@
-@Plans
+@Plans @Regression
 Feature: Plan data table
 
   Background: Plan data table info validation

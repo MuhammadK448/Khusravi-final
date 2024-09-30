@@ -55,7 +55,7 @@
             <version>2.22.1</version>
         </dependency>
     </dependencies>
-    <!-- This is used to run headless chrome project on jenkins-->
+    <!-- This is used to run headless project on jenkins-->
     <build>
         <plugins>
             <plugin>
